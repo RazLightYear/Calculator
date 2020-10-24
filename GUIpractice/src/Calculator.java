@@ -17,9 +17,7 @@ public class Calculator
 {
 public static void main(String[] args) 
 {
-	calculatorFrame obj=new calculatorFrame();
-	
-	
+	calculatorFrame obj=new calculatorFrame();		
 }
 }
 
@@ -27,14 +25,12 @@ class calculatorFrame extends JFrame implements ActionListener
 {
 	private JTextField t1;
 	private JButton addition,substraction,multiply,divide,equals,Clear,b1,b2,b3,b4,b5,b6,b7,b8,b9,b0;
-	private String s1,s2,s3;
-	
+	private String s1,s2,s3;	
 	
 	public calculatorFrame()
 	{
 		s1=s2=s3="";
-		
-		
+				
 		t1=new JTextField();
 		t1.setEditable(false);
 		t1.setBackground(Color.white);
@@ -144,13 +140,6 @@ class calculatorFrame extends JFrame implements ActionListener
 
 	}
 
-
-
-
-
-	/**
-	 *
-	 */
 	@Override
 	public void actionPerformed(ActionEvent ev) 
 	{
@@ -159,16 +148,16 @@ class calculatorFrame extends JFrame implements ActionListener
 		
 		if(s.charAt(0)>='0' && s.charAt(0)<='9')
 			{
-				if(!s2.equals("")) // if s2 is still "" that means that no operand was pressed. 
-					               // if s2 is not "" anymore that means that an operand was pressed and the rest of the numbers needs to go inside the second number
-				{
-					s3=s3+s;
-				}
+			if(!s2.equals("")) // if s2 is still "" that means that no operand was pressed. 
+				               // if s2 is not "" anymore that means that an operand was pressed and the rest of the numbers needs to go inside the second number
+			{
+		 		s3=s3+s;
+			}
 				
-				else
-				{
-					s1=s1+s;
-				}
+		else
+			{
+				s1=s1+s;
+			}
 				
 				t1.setText(s1+s2+s3);
 			}
@@ -214,20 +203,20 @@ class calculatorFrame extends JFrame implements ActionListener
 			
 			else 
 			{
-				int tmp;
+			int tmp;
 				if (s2.equals("+")) 
 					tmp = (Integer.parseInt(s1) + Integer.parseInt(s3)); 
-                else if (s2.equals("-")) 
-                	tmp = (Integer.parseInt(s1) - Integer.parseInt(s3)); 
-                else if (s2.equals("/")) 
-                	tmp = (Integer.parseInt(s1) / Integer.parseInt(s3)); 
-                else
-                	tmp = (Integer.parseInt(s1) * Integer.parseInt(s3)); 
+                		else if (s2.equals("-")) 
+                			tmp = (Integer.parseInt(s1) - Integer.parseInt(s3)); 
+                		else if (s2.equals("/")) 
+                			tmp = (Integer.parseInt(s1) / Integer.parseInt(s3)); 
+                		else
+                			tmp = (Integer.parseInt(s1) * Integer.parseInt(s3)); 
                   
-                s1 = Integer.toString(tmp);               
-                s2 = s;                   
-                s3 = ""; 
-            } 
+            		s1 = Integer.toString(tmp);               
+                	s2 = s;                   
+                	s3 = ""; 
+             		} 
 		}		
 	}			
 }
